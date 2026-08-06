@@ -1,0 +1,14 @@
+systemPackages:
+  dnf:
+    - curl
+    - pipx
+    - fzf
+    - zoxide
+    - fastfetch
+  apt:
+    - curl
+    - pipx
+    - fzf
+    - zoxide
+    - fastfetch
+    - starship

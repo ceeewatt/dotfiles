@@ -1,0 +1,8 @@
+{{ if eq .osid "linux-ubuntu" -}}
+#!/usr/bin/env bash
+
+{{ range .systemPackages.apt -}}
+sudo apt install {{ . | quote }}
+{{ end -}}
+
+{{ end -}}
