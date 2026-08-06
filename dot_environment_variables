@@ -6,3 +6,6 @@
 
 # Uncomment if you don't like systemctl's auto-paging feature
 # export SYSTEMD_PAGER=
+
+# https://github.com/tldr-pages/tldr-python-client#remote-source
+export TLDR_PAGES_SOURCE_LOCATION=file:///home/${USER}/dev/home/tldr/pages
