@@ -10,6 +10,13 @@ These are the tools for which I need to manage the configuration of:
 - Terminal multiplexer: zellij
 - other utilities: fzf, zoxide, starship, and more to be added...
 
+# TODO
+
+- Install system packages
+- Install third party tool `~/opt`, with symlinks in `~/.local/bin`
+- SSH & password manager integration
+- nvim
+
 # WIP: Setup Instructions
 
 My chezmoi configuration, at present, is a work in progress. As such, a new machine will require some manual configuration alongside the use of chezmoi.
