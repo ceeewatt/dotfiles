@@ -1,0 +1,3 @@
+["dev/home/tldr"]
+    type = "git-repo"
+    url = "home.github.com:ceeewatt/tldr.git"
