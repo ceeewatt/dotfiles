@@ -5,6 +5,10 @@ systemPackages:
     - fzf
     - zoxide
     - fastfetch
+    - trash-cli
+    - fd-find
+    - libnotify
+    - bat
   apt:
     - curl
     - pipx
@@ -12,3 +16,7 @@ systemPackages:
     - zoxide
     - fastfetch
     - starship
+    - trash-cli
+    - fd-find
+    - libnotify-bin
+    - bat
