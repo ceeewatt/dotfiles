@@ -1,15 +1,18 @@
-# .bash_profile
+# .bash_profile: executed for login shells
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
+# Private bin directories
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Source our environment variable definitions
+# Exported environment variables
 if [ -f ~/.environment_variables ]; then
-  . ~/.environment_variables
+    . ~/.environment_variables
 fi
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi

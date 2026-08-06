@@ -1,0 +1,8 @@
+# .environment_variables
+
+# TODO
+# export EDITOR=nvim
+# export VISUAL=nvim
+
+# Uncomment if you don't like systemctl's auto-paging feature
+# export SYSTEMD_PAGER=
