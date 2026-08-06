@@ -1,1 +1,9 @@
-sourceDir = {{- joinPath .chezmoi.homeDir "dev" "home" "dotfiles" | quote -}}
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+
+sourceDir = {{ joinPath .chezmoi.homeDir "dev" "home" "dotfiles" | quote }}
+
+[data]
+    osid = {{ $osid | quote }}
