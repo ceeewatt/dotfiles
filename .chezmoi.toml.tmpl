@@ -1,6 +1,1 @@
-sourceDir = {{ joinPath .chezmoi.rawHomeDir "dev" "home" "dotfiles" | quote }}
-encryption = "gpg"
-
-[gpg]
-  recipient = "Colin Watson"
-  args = ["--quiet"]
+sourceDir = {{- joinPath .chezmoi.homeDir "dev" "home" "dotfiles" | quote -}}
