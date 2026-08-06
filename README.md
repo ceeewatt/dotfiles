@@ -13,9 +13,17 @@ These are the tools for which I need to manage the configuration of:
 # TODO
 
 - Install system packages
-- Install third party tool `~/opt`, with symlinks in `~/.local/bin`
+    - curl
+    - pipx
+    - C/C++ devel tools
+- Install third party tools
+    - zellij
+    - tldr
+    - node & bun
+    - cargo
 - SSH & password manager integration
 - nvim
+- vscode
 
 # WIP: Setup Instructions
 
@@ -26,6 +34,8 @@ My chezmoi configuration, at present, is a work in progress. As such, a new mach
 From cloud storage, download the kdbx database(s). Manually import the ssh keys and ssh config file to `~/.ssh`.
 
 2) Configure sudo: edit sudoers file via `visudo`.
+
+Run `sudo visudo -f /etc/sudoers.d/${USER}` and append a line of the following form: `<user> ALL=(ALL:ALL) NOPASSWD: ALL`.
 
 3) Ensure prequisite system packages are installed: git
 
