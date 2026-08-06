@@ -41,8 +41,13 @@ Run `sudo visudo -f /etc/sudoers.d/${USER}` and append a line of the following f
 
 4) Install and initialize chezmoi
 
-The following command should install chezmoi, clone this repo, and initialize itself. Note that the command uses the SSH url, which relies on the configuration added in step 1.
+The following commands should install the chezmoi executable to `~/opt` and create a symbolic link in `~/.local/bin`. Once installed, run the `chezmoi init` command to clone this repo and initialize the local chezmoi installation. Note that this command uses the SSH url, which relies on the configuration added in step 1.
 
-`sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init -S ~/dev/home/dotfiles home.github.com:ceeewatt/dotfiles.git`
+```sh
+mkdir -p ~/opt ~/.local/bin
+sh -c "$(curl -fsLS https://get.chezmoi.io)" -- -b ~/opt
+ln -s ~/opt/chezmoi ~/.local/bin
+chezmoi init -S ~/dev/home/dotfiles home.github.com:ceeewatt/dotfiles.git
+```
 
 5) Apply changes with: `chezmoi apply`
