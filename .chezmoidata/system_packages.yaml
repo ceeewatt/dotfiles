@@ -10,6 +10,7 @@ systemPackages:
     - libnotify
     - bat
     - alacritty
+    - ripgrep
   apt:
     - curl
     - pipx
@@ -22,5 +23,6 @@ systemPackages:
     - libnotify-bin
     - bat
     - alacritty
+    - ripgrep
   aptIgnoreWsl:
     - alacritty
