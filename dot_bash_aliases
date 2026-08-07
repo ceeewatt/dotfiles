@@ -19,3 +19,7 @@ alias l='ls -CF'
 
 # trash-cli
 alias t='trash'
+
+mkcd() {
+    mkdir -p -- "$1" && cd -- "$1"
+}
