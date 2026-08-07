@@ -3,7 +3,10 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
+{{- $emailWork := promptStringOnce . "emailWork" "What is your work email" -}}
+
 sourceDir = {{ joinPath .chezmoi.homeDir "dev" "home" "dotfiles" | quote }}
 
 [data]
     osid = {{ $osid | quote }}
+    emailWork = {{ $emailWork | quote }}

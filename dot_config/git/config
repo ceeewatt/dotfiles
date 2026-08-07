@@ -1,6 +1,6 @@
 [init]
-  defaultBranch = main
+    defaultBranch = main
 [includeIf "gitdir:~/dev/home/"]
-  path = ~/.config/git/git_home
+    path = ~/.config/git/git_home
 [includeIf "gitdir:~/dev/work/"]
-  path = ~/.config/git/git_work
+    path = ~/.config/git/git_work
