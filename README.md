@@ -12,18 +12,10 @@ These are the tools for which I need to manage the configuration of:
 
 # TODO
 
-- Install system packages
-    - curl
-    - pipx
-    - C/C++ devel tools
-- Install third party tools
-    - zellij
-    - tldr
-    - node & bun
-    - cargo
-- SSH & password manager integration
 - nvim
 - vscode
+- gnome/dconf
+- notes repo
 
 # WIP: Setup Instructions
 
