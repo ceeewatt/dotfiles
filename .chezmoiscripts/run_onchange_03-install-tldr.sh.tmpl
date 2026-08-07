@@ -1,0 +1,7 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/usr/bin/env bash
+
+echo Downloading tldr python client...
+pipx install tldr
+
+{{ end -}}
