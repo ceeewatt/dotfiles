@@ -12,6 +12,8 @@ systemPackages:
     - alacritty
     - ripgrep
     - neovim
+    - tree
+    - unzip
   apt:
     - curl
     - pipx
@@ -26,5 +28,7 @@ systemPackages:
     - alacritty
     - ripgrep
     - neovim
+    - tree
+    - unzip
   aptIgnoreWsl:
     - alacritty
