@@ -28,13 +28,10 @@ From cloud storage, download the kdbx database(s). Manually import the ssh keys 
 ```sh
 cd ~/.ssh
 keys='id_rsa id_ed25519 ...'
-for k in "$keys"; do
-    # Generate corresponding public key
-    ssh-keygen -y -f $k > ${k}.pub
-
-    # Restrict file permissions
+for k in $keys; do
     chmod 600 $k
-    chmod 644 ${k}.pub
+    ssh-keygen -y -f $k > "$k.pub"
+    chmod 644 "$k.pub"
 done
 
 chmod 700 ~/.ssh
@@ -42,7 +39,7 @@ chmod 700 ~/.ssh
 
 2) Configure sudo: edit sudoers file via `visudo`.
 
-Run `sudo visudo -f /etc/sudoers.d/${USER}` and append a line of the following form: `<user> ALL=(ALL:ALL) NOPASSWD: ALL`.
+Run `sudo visudo -f /etc/sudoers.d/$USER` and append a line of the following form: `<user> ALL=(ALL:ALL) NOPASSWD: ALL`.
 
 3) Ensure prequisite system packages are installed: git
 
@@ -51,7 +48,8 @@ Run `sudo visudo -f /etc/sudoers.d/${USER}` and append a line of the following f
 The following commands should install the chezmoi executable to `~/opt` and create a symbolic link in `~/.local/bin`. Once installed, run the `chezmoi init` command to clone this repo and initialize the local chezmoi installation. Note that this command uses the SSH url, which relies on the configuration added in step 1.
 
 ```sh
-mkdir -p ~/opt ~/.local/bin
+# Let's create the other home directories while we're here
+mkdir -p ~/opt ~/.local/bin ~/dev/{home,work} ~/temp
 sh -c "$(curl -fsLS https://get.chezmoi.io)" -- -b ~/opt
 ln -sf ~/opt/chezmoi ~/.local/bin
 chezmoi init -S ~/dev/home/dotfiles home.github.com:ceeewatt/dotfiles.git
@@ -92,7 +90,7 @@ Disable font ligatures:
 # Add tldr remote url for fetching changes from upstream
 cd ~/dev/home/tldr
 git remote add upstream https://github.com/tldr-pages/tldr.git
-git remote set-url --push upstream no_push
+git remote set-url --push upstream NONE
 
 # Since this repo isn't under ~/dev we must manually set these
 cd ~/.config/nvim
