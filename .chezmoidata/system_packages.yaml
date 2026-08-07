@@ -14,6 +14,8 @@ systemPackages:
     - neovim
     - tree
     - unzip
+    - xxd
+    - vim-enhanced
   apt:
     - curl
     - pipx
@@ -30,5 +32,7 @@ systemPackages:
     - neovim
     - tree
     - unzip
+    - xxd
+    - vim
   aptIgnoreWsl:
     - alacritty
