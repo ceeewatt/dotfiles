@@ -72,3 +72,16 @@ Gruvbox Dark theme:
 - Copy the JSON scheme object from `github.com/runxel/gruvbox-iterm`.
 - Under terminal settings, click `Open JSON file` to open `settings.json`.
 - Paste the JSON object under `schemes`. Save the file. The theme should then appear as an option under `Profiles` > `Ubuntu` > `Appearance`.
+
+Disable font ligatures:
+- In the same `settings.json` file, add or modify the `font.features` object to set both `liga` and `calt` to zero:
+
+```json
+"font": {
+    "face": "JetBrainsMono Nerd Font",
+    "features": {
+        "calt": 0,
+        "liga": 0
+    }
+}
+```
