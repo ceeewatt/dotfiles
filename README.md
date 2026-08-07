@@ -31,7 +31,22 @@ My chezmoi configuration, at present, is a work in progress. As such, a new mach
 
 1) Install KeePassXC password manager. On WSL, install natively on Windows.
 
-From cloud storage, download the kdbx database(s). Manually import the ssh keys and ssh config file to `~/.ssh`.
+From cloud storage, download the kdbx database(s). Manually import the ssh keys and ssh config file to `~/.ssh`, and set file permissions appropriately:
+
+```sh
+cd ~/.ssh
+keys='id_rsa id_ed25519 ...'
+for k in "$keys"; do
+    # Generate corresponding public key
+    ssh-keygen -y -f $k > ${k}.pub
+
+    # Restrict file permissions
+    chmod 600 $k
+    chmod 644 ${k}.pub
+done
+
+chmod 700 ~/.ssh
+```
 
 2) Configure sudo: edit sudoers file via `visudo`.
 
