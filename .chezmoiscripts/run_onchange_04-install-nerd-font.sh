@@ -1,3 +1,4 @@
+{{ if not (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
 #!/usr/bin/env bash
 
 ver=''   # eg: v3.5.0
@@ -18,3 +19,4 @@ rm -f ~/.local/share/fonts/JetBrainsMonoNerdFont/*
 curl -fsSL $url | tar -xJf - -C ~/.local/share/fonts/JetBrainsMonoNerdFont
 
 fc-cache -f
+{{ end -}}
