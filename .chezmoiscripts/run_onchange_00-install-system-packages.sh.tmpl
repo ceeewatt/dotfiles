@@ -1,11 +1,36 @@
 #!/usr/bin/env bash
 
 {{ if eq .osid "linux-fedora" -}}
+
 {{   range .systemPackages.dnf -}}
 sudo dnf install -y {{ . | quote }}
 {{   end -}}
+
 {{ else if eq .osid "linux-ubuntu" -}}
-{{   range .systemPackages.apt -}}
+
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+# Ubuntu on WSL: install all apt packages except those in aptIgnoreWsl
+PGK_APT=( {{ range .systemPackages.apt }} {{ . }} {{ end }} )
+
+for pkg in "${PGK_APT[@]}"; do
+    case "$pkg" in
+    {{- if index .systemPackages "aptIgnoreWsl" }}
+    {{-   range .systemPackages.aptIgnoreWsl }}
+    "{{ . }}")
+        echo "Packge $pkg is in aptIgnoreWsl list; skipping installation..."
+        ;;
+    {{-   end -}}
+    {{- end }}
+
+    *)
+        sudo apt install -y "$pkg"
+        ;;
+    esac
+done
+{{   else }}
+{{     range .systemPackages.apt -}}
 sudo apt install -y {{ . | quote }}
-{{   end -}}
+{{     end -}}
+{{   end }}
+
 {{ end -}}

@@ -9,6 +9,7 @@ systemPackages:
     - fd-find
     - libnotify
     - bat
+    - alacritty
   apt:
     - curl
     - pipx
@@ -20,3 +21,6 @@ systemPackages:
     - fd-find
     - libnotify-bin
     - bat
+    - alacritty
+  aptIgnoreWsl:
+    - alacritty
