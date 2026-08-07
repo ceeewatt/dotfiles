@@ -46,7 +46,7 @@ The following commands should install the chezmoi executable to `~/opt` and crea
 ```sh
 mkdir -p ~/opt ~/.local/bin
 sh -c "$(curl -fsLS https://get.chezmoi.io)" -- -b ~/opt
-ln -s ~/opt/chezmoi ~/.local/bin
+ln -sf ~/opt/chezmoi ~/.local/bin
 chezmoi init -S ~/dev/home/dotfiles home.github.com:ceeewatt/dotfiles.git
 ```
 

@@ -1,0 +1,8 @@
+{{ if eq .osid "linux-fedora" -}}
+#!/usr/bin/env bash
+
+echo Downloading starship...
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- -y -b ~/opt
+ln -sf ~/opt/starship ~/.local/bin
+
+{{ end -}}

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+{{ if eq .osid "linux-fedora" -}}
+{{   range .systemPackages.dnf -}}
+sudo dnf install {{ . | quote }}
+{{   end -}}
+{{ else if eq .osid "linux-ubuntu" -}}
+{{   range .systemPackages.apt -}}
+sudo apt install {{ . | quote }}
+{{   end -}}
+{{ end -}}

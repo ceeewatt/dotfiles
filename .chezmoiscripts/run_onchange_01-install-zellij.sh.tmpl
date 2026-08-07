@@ -1,0 +1,21 @@
+{{ if (or (eq .osid "linux-fedora") (eq .osid "linux-ubuntu")) -}}
+{{ if eq .chezmoi.arch "amd64" -}}
+#!/usr/bin/env bash
+
+ver=''
+
+exe='zellij-x86_64-unknown-linux-musl.tar.gz'
+root='https://github.com/zellij-org/zellij'
+
+if [ -n "$ver" ]; then
+    url="${root}/releases/download/${ver}/${exe}"
+else
+    url="${root}/releases/latest/download/${exe}"
+fi
+
+echo Downloading zellij from $url
+
+curl -fsSL $url | tar -xzf - -C ~/opt && ln -sf ~/opt/zellij ~/.local/bin
+
+{{ end -}}
+{{ end -}}

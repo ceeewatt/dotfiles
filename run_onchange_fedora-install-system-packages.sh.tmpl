@@ -1,8 +1,0 @@
-{{ if eq .osid "linux-fedora" -}}
-#!/usr/bin/env bash
-
-{{ range .systemPackages.dnf -}}
-sudo dnf install {{ . | quote }}
-{{ end -}}
-
-{{ end -}}
