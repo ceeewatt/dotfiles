@@ -58,3 +58,17 @@ chezmoi init -S ~/dev/home/dotfiles home.github.com:ceeewatt/dotfiles.git
 ```
 
 5) Apply changes with: `chezmoi apply`
+
+6) Manual steps for Windows/WSL
+
+At present, I'm using the default Windows Terminal rather than Alacritty. To match my Alacritty config, manually install the appropriate nerd font and theme.
+
+Nerd font:
+- Download an unzip `https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip`.
+- Select all `*.ttf` files, right click, and select `Install`.
+- Select `JetBrainsMono Nerd Font` under `Profiles` > `Ubuntu` > `Appearance`.
+
+Gruvbox Dark theme:
+- Copy the JSON scheme object from `github.com/runxel/gruvbox-iterm`.
+- Under terminal settings, click `Open JSON file` to open `settings.json`.
+- Paste the JSON object under `schemes`. Save the file. The theme should then appear as an option under `Profiles` > `Ubuntu` > `Appearance`.
