@@ -16,6 +16,8 @@ systemPackages:
     - unzip
     - xxd
     - vim-enhanced
+    - dconf-editor
+    - gnome-tweaks
   apt:
     - curl
     - pipx
@@ -34,5 +36,9 @@ systemPackages:
     - unzip
     - xxd
     - vim
+    - dconf-editor
+    - gnome-tweaks
   aptIgnoreWsl:
     - alacritty
+    - dconf-editor
+    - gnome-tweaks
