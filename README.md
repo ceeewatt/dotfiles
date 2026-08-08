@@ -93,4 +93,9 @@ Disable font ligatures:
 cd ~/dev/home/tldr
 git remote add upstream https://github.com/tldr-pages/tldr.git
 git remote set-url --push upstream no_push
+
+# Since this repo isn't under ~/dev we must manually set these
+cd ~/.config/nvim
+git config --local user.name "Colin Watson"
+git config --local user.email "137962378+ceeewatt@users.noreply.github.com"
 ```
