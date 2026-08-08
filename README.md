@@ -85,3 +85,12 @@ Disable font ligatures:
     }
 }
 ```
+
+7) Manual steps for Linux
+
+```sh
+# Add tldr remote url for fetching changes from upstream
+cd ~/dev/home/tldr
+git remote add upstream https://github.com/tldr-pages/tldr.git
+git remote set-url --push upstream no_push
+```
